@@ -11,7 +11,7 @@
         <h4>No need to give any of your details</h4>
         <h4>We already know everything!</h4>
         <p class="smallText"><i>Only one pizzea per order!</i></p>
-        
+
     </div>
     <div class="container">
         <div class="row">
@@ -29,6 +29,14 @@
                     </div>
                 </div>
             </div>
+            @foreach(var item in Model.PizzaList)
+            {
+                var photoPath = "~/images/Pizzas/" + (item.ImageTitle + ".png");
+                <div class="col-4 mb-5">
+                    <img src="@photoPath" class="w-100" asp-append-version=true />
+                    <a class="btn btn-primary mt-1" asp-area="" asp-page="Checkout/Checkout" asp-route-ImageTitle="@item.ImageTitle" asp-route-PizzaPrice="@item.FinalPrice">Get this pizza!</a>
+                </div>
+            }
         </div>
     </div>
 

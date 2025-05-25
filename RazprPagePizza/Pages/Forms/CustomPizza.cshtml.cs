@@ -18,14 +18,14 @@ namespace RazorPizzeria.Pages.Forms
         {
             PizzaPrice = Pizza.BasePrice;
 
-            if (Pizza.TomatoSauce) PizzaPrice += 1;
-            if (Pizza.Cheese) PizzaPrice += 1;
-            if (Pizza.Peperoni) PizzaPrice += 1;
-            if (Pizza.Mushroom) PizzaPrice += 1;
-            if (Pizza.Tuna) PizzaPrice += 1;
+            if (Pizza.TomatoSauce) PizzaPrice += 2;
+            if (Pizza.Cheese) PizzaPrice += 4;
+            if (Pizza.Peperoni) PizzaPrice += 6;
+            if (Pizza.Mushroom) PizzaPrice += 2;
+            if (Pizza.Tuna) PizzaPrice += 3;
             if (Pizza.Pineapple) PizzaPrice += 10;
-            if (Pizza.Ham) PizzaPrice += 1;
-            if (Pizza.Beef) PizzaPrice += 1;
+            if (Pizza.Ham) PizzaPrice += 2;
+            if (Pizza.Beef) PizzaPrice += 4;
 
             return RedirectToPage("/Checkout/Checkout", new { Pizza.PizzaName, PizzaPrice });
         }
